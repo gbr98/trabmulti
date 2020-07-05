@@ -1,0 +1,6 @@
+Passos: 
+1. tomar velocidade do vento obtida pela simulação, em .inp
+2. obter a posição de cada nó em .bdf
+3. settar a velocidade em notebook-bt, para cada ponto da malha (por meio de ponto mais próximo)
+4. rodar a simulação com velocidade do vento
+5. obter resultados e passar ao relatório
