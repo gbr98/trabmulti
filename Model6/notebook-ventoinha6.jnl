@@ -1,0 +1,369 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(modelType=CFD, name='Model-2')
+del mdb.models['Model-1']
+mdb.models['Model-2'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-2'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(37.8, 24.3))
+mdb.models['Model-2'].Part(dimensionality=THREE_D, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-2'].parts['Part-1'].BaseSolidExtrude(depth=1.0, sketch=
+    mdb.models['Model-2'].sketches['__profile__'])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=2.24, name='__profile__', 
+    sheetSize=89.89, transform=
+    mdb.models['Model-2'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['Part-1'].faces[4], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-2'].parts['Part-1'].edges[7], 
+    sketchOrientation=RIGHT, origin=(18.9, 12.15, 1.0)))
+mdb.models['Model-2'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -12.6, -6.075), point1=(-16.6, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, -6.075), point1=(4.0, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    12.6, -6.075), point1=(16.6, 6.075))
+mdb.models['Model-2'].sketches['__profile__'].undo()
+mdb.models['Model-2'].parts['Part-1'].PartitionFaceBySketch(faces=
+    mdb.models['Model-2'].parts['Part-1'].faces.getSequenceFromMask(('[#10 ]', 
+    ), ), sketch=mdb.models['Model-2'].sketches['__profile__'], sketchUpEdge=
+    mdb.models['Model-2'].parts['Part-1'].edges[7])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=2.24, name='__profile__', 
+    sheetSize=89.87, transform=
+    mdb.models['Model-2'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['Part-1'].faces[1], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-2'].parts['Part-1'].edges[3], 
+    sketchOrientation=RIGHT, origin=(19.674252, 12.8966, 1.0)))
+mdb.models['Model-2'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    12.6, -6.075), point1=(16.6, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].undo()
+mdb.models['Model-2'].sketches['__profile__'].undo()
+mdb.models['Model-2'].sketches['__profile__'].undo()
+#* Nothing to undo.
+mdb.models['Model-2'].sketches['__profile__'].undo()
+#* Nothing to undo.
+del mdb.models['Model-2'].sketches['__profile__']
+del mdb.models['Model-2'].parts['Part-1'].features['Partition face-1']
+mdb.models['Model-2'].ConstrainedSketch(gridSpacing=2.24, name='__profile__', 
+    sheetSize=89.89, transform=
+    mdb.models['Model-2'].parts['Part-1'].MakeSketchTransform(
+    sketchPlane=mdb.models['Model-2'].parts['Part-1'].faces[4], 
+    sketchPlaneSide=SIDE1, 
+    sketchUpEdge=mdb.models['Model-2'].parts['Part-1'].edges[7], 
+    sketchOrientation=RIGHT, origin=(18.9, 12.15, 1.0)))
+mdb.models['Model-2'].parts['Part-1'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-2'].sketches['__profile__'])
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -12.6, -6.075), point1=(-16.6, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    12.6, -6.075), point1=(16.6, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, -6.075), point1=(4.0, -6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    -12.6, 6.075), point1=(-16.6, 6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    12.6, 6.075), point1=(16.6, 6.075))
+mdb.models['Model-2'].sketches['__profile__'].CircleByCenterPerimeter(center=(
+    0.0, 6.075), point1=(4.0, 6.075))
+mdb.models['Model-2'].parts['Part-1'].PartitionFaceBySketch(faces=
+    mdb.models['Model-2'].parts['Part-1'].faces.getSequenceFromMask(('[#10 ]', 
+    ), ), sketch=mdb.models['Model-2'].sketches['__profile__'], sketchUpEdge=
+    mdb.models['Model-2'].parts['Part-1'].edges[7])
+del mdb.models['Model-2'].sketches['__profile__']
+mdb.models['Model-2'].Material(name='ar')
+mdb.models['Model-2'].materials['ar'].Density(table=((9.98204e-07, ), ))
+mdb.models['Model-2'].materials['ar'].Viscosity(table=((1.002e-09, ), ))
+mdb.models['Model-2'].HomogeneousFluidSection(material='ar', name='Section-1')
+mdb.models['Model-2'].parts['Part-1'].Set(cells=
+    mdb.models['Model-2'].parts['Part-1'].cells.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-2'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-2'].parts['Part-1'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-2'].parts['Part-1'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=1.0)
+mdb.models['Model-2'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=FC3D8, elemLibrary=FLUID), ElemType(elemCode=FC3D6, 
+    elemLibrary=FLUID), ElemType(elemCode=FC3D4, elemLibrary=FLUID)), regions=(
+    mdb.models['Model-2'].parts['Part-1'].cells.getSequenceFromMask(('[#1 ]', 
+    ), ), ))
+mdb.models['Model-2'].parts['Part-1'].generateMesh()
+mdb.models['Model-2'].FlowStep(name='Step-1', previous='Initial')
+mdb.models['Model-2'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-2'].rootAssembly.Instance(dependent=ON, name='Part-1-1', 
+    part=mdb.models['Model-2'].parts['Part-1'])
+mdb.models['Model-2'].rootAssembly.Surface(name='Surf-1', side1Faces=
+    mdb.models['Model-2'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    ('[#41f ]', ), ))
+mdb.models['Model-2'].FluidInletOutletBC(createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, momentumType=
+    VELOCITY, name='inflow', pressure=UNSET, region=
+    mdb.models['Model-2'].rootAssembly.surfaces['Surf-1'], v3=-1.0)
+mdb.models['Model-2'].rootAssembly.Surface(name='Surf-2', side1Faces=
+    mdb.models['Model-2'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    ('[#9a0 ]', ), ))
+mdb.models['Model-2'].FluidInletOutletBC(createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, momentumType=
+    PRESSURE, name='livre', pressure=0.0, region=
+    mdb.models['Model-2'].rootAssembly.surfaces['Surf-2'])
+mdb.models['Model-2'].rootAssembly.Surface(name='Surf-3', side1Faces=
+    mdb.models['Model-2'].rootAssembly.instances['Part-1-1'].faces.getSequenceFromMask(
+    ('[#800 ]', ), ))
+mdb.models['Model-2'].FluidInletOutletBC(createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, momentumType=
+    VELOCITY, name='placa', pressure=UNSET, region=
+    mdb.models['Model-2'].rootAssembly.surfaces['Surf-3'], v3=0.0)
+mdb.Job(atTime=None, description='', memory=90, memoryUnits=PERCENTAGE, model=
+    'Model-2', name='Job-1', numCpus=1, queue=None, resultsFormat=ODB, scratch=
+    '', type=ANALYSIS, waitHours=0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-RNQCE2T', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': CFD_PHASE, 
+    'clientHost': 'DESKTOP-RNQCE2T', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'No initial density has been prescribed. The default density from the material definition will be used', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable TURBNU was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable TEMP was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable U was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0, 'stepPercentage': 0.0, 
+    'deltaTime': 0.01, 'jobName': 'Job-1', 'step': 1, 'increment': 0, 
+    'phase': CFD_PHASE, 'kineticEnergy': 0.000114368, 'rmsDiv': 0.000396167})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.01025, 
+    'stepPercentage': 1.025, 'deltaTime': 0.01025, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 1, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114248, 'rmsDiv': 0.000396156})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0207562, 
+    'stepPercentage': 2.07562, 'deltaTime': 0.0105062, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 2, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114243, 'rmsDiv': 0.000396135})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0315252, 
+    'stepPercentage': 3.15252, 'deltaTime': 0.0107689, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 3, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114257, 'rmsDiv': 0.000396114})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0425633, 
+    'stepPercentage': 4.25633, 'deltaTime': 0.0110381, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 4, 'phase': CFD_PHASE, 'kineticEnergy': 0.00011428, 
+    'rmsDiv': 0.000396095})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0538774, 
+    'stepPercentage': 5.38774, 'deltaTime': 0.0113141, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 5, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114311, 'rmsDiv': 0.00039608})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0654743, 
+    'stepPercentage': 6.54743, 'deltaTime': 0.0115969, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 6, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114349, 'rmsDiv': 0.000396067})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0773612, 
+    'stepPercentage': 7.73612, 'deltaTime': 0.0118869, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 7, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114395, 'rmsDiv': 0.000396058})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.0895452, 
+    'stepPercentage': 8.95452, 'deltaTime': 0.012184, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 8, 'phase': CFD_PHASE, 'kineticEnergy': 0.00011445, 
+    'rmsDiv': 0.000396052})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.102034, 
+    'stepPercentage': 10.2034, 'deltaTime': 0.0124886, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 9, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114512, 'rmsDiv': 0.00039605})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.114835, 
+    'stepPercentage': 11.4835, 'deltaTime': 0.0128008, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 10, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114584, 'rmsDiv': 0.000396052})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.127956, 
+    'stepPercentage': 12.7956, 'deltaTime': 0.0131209, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 11, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114664, 'rmsDiv': 0.000396058})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.141404, 
+    'stepPercentage': 14.1404, 'deltaTime': 0.0134489, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 12, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114753, 'rmsDiv': 0.000396068})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.15519, 
+    'stepPercentage': 15.519, 'deltaTime': 0.0137851, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 13, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114851, 'rmsDiv': 0.000396084})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.169319, 
+    'stepPercentage': 16.9319, 'deltaTime': 0.0141297, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 14, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000114958, 'rmsDiv': 0.000396104})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.183802, 
+    'stepPercentage': 18.3802, 'deltaTime': 0.014483, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 15, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115075, 'rmsDiv': 0.00039613})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.198647, 
+    'stepPercentage': 19.8647, 'deltaTime': 0.0148451, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 16, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115201, 'rmsDiv': 0.000396161})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.213863, 
+    'stepPercentage': 21.3863, 'deltaTime': 0.0152162, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 17, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115337, 'rmsDiv': 0.000396199})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.22946, 
+    'stepPercentage': 22.946, 'deltaTime': 0.0155966, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 18, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115483, 'rmsDiv': 0.000396243})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.245447, 
+    'stepPercentage': 24.5447, 'deltaTime': 0.0159865, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 19, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115638, 'rmsDiv': 0.000396293})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.261833, 
+    'stepPercentage': 26.1833, 'deltaTime': 0.0163862, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 20, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000115804, 'rmsDiv': 0.000396349})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.278629, 
+    'stepPercentage': 27.8629, 'deltaTime': 0.0167958, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 21, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.00011598, 'rmsDiv': 0.000396412})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.295844, 
+    'stepPercentage': 29.5844, 'deltaTime': 0.0172157, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 22, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000116166, 'rmsDiv': 0.000396482})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.31349, 
+    'stepPercentage': 31.349, 'deltaTime': 0.0176461, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 23, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000116362, 'rmsDiv': 0.000396559})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.331578, 
+    'stepPercentage': 33.1578, 'deltaTime': 0.0180873, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 24, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000116569, 'rmsDiv': 0.000396642})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.350117, 
+    'stepPercentage': 35.0117, 'deltaTime': 0.0185394, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 25, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000116786, 'rmsDiv': 0.000396733})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.36912, 
+    'stepPercentage': 36.912, 'deltaTime': 0.0190029, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 26, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000117014, 'rmsDiv': 0.000396831})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.388598, 
+    'stepPercentage': 38.8598, 'deltaTime': 0.019478, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 27, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000117252, 'rmsDiv': 0.000396936})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.408563, 
+    'stepPercentage': 40.8563, 'deltaTime': 0.019965, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 28, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000117501, 'rmsDiv': 0.00039705})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.429027, 
+    'stepPercentage': 42.9027, 'deltaTime': 0.0204641, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 29, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.00011776, 'rmsDiv': 0.000397171})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.450003, 
+    'stepPercentage': 45.0003, 'deltaTime': 0.0209757, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 30, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.00011803, 'rmsDiv': 0.000397299})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.471503, 
+    'stepPercentage': 47.1503, 'deltaTime': 0.0215001, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 31, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000118311, 'rmsDiv': 0.000397436})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.49354, 
+    'stepPercentage': 49.354, 'deltaTime': 0.0220376, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 32, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000118602, 'rmsDiv': 0.000397582})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.516129, 
+    'stepPercentage': 51.6129, 'deltaTime': 0.0225885, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 33, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000118903, 'rmsDiv': 0.000397736})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.539282, 
+    'stepPercentage': 53.9282, 'deltaTime': 0.0231532, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 34, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000119215, 'rmsDiv': 0.000397898})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.563014, 
+    'stepPercentage': 56.3014, 'deltaTime': 0.0237321, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 35, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000119538, 'rmsDiv': 0.00039807})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.587339, 
+    'stepPercentage': 58.7339, 'deltaTime': 0.0243254, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 36, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000119871, 'rmsDiv': 0.000398251})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.612273, 
+    'stepPercentage': 61.2273, 'deltaTime': 0.0249335, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 37, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000120214, 'rmsDiv': 0.000398441})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.63783, 
+    'stepPercentage': 63.783, 'deltaTime': 0.0255568, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 38, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000120567, 'rmsDiv': 0.00039864})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.664026, 
+    'stepPercentage': 66.4026, 'deltaTime': 0.0261957, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 39, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000120931, 'rmsDiv': 0.000398849})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.690876, 
+    'stepPercentage': 69.0876, 'deltaTime': 0.0268506, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 40, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000121305, 'rmsDiv': 0.000399069})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.718398, 
+    'stepPercentage': 71.8398, 'deltaTime': 0.0275219, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 41, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000121689, 'rmsDiv': 0.000399299})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.746608, 
+    'stepPercentage': 74.6608, 'deltaTime': 0.02821, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 42, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000122082, 'rmsDiv': 0.000399539})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.775523, 
+    'stepPercentage': 77.5523, 'deltaTime': 0.0289152, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 43, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000122486, 'rmsDiv': 0.000399791})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.805161, 
+    'stepPercentage': 80.5161, 'deltaTime': 0.0296381, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 44, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000122899, 'rmsDiv': 0.000400054})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.83554, 
+    'stepPercentage': 83.554, 'deltaTime': 0.030379, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 45, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000123322, 'rmsDiv': 0.000400328})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.866679, 
+    'stepPercentage': 86.6679, 'deltaTime': 0.0311385, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 46, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000123755, 'rmsDiv': 0.000400614})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.898596, 
+    'stepPercentage': 89.8596, 'deltaTime': 0.031917, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 47, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000124197, 'rmsDiv': 0.000400913})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.931311, 
+    'stepPercentage': 93.1311, 'deltaTime': 0.0327149, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 48, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000124649, 'rmsDiv': 0.000401224})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.964843, 
+    'stepPercentage': 96.4843, 'deltaTime': 0.0335328, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 49, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.00012511, 'rmsDiv': 0.000401548})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 0.999215, 
+    'stepPercentage': 99.9215, 'deltaTime': 0.0343711, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 50, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.00012558, 'rmsDiv': 0.000401886})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.03444, 
+    'stepPercentage': 100.0, 'deltaTime': 0.0352304, 'jobName': 'Job-1', 
+    'step': 1, 'increment': 51, 'phase': CFD_PHASE, 
+    'kineticEnergy': 0.000126059, 'rmsDiv': 0.000402237})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': CFD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Jul 06 22:14:59 2020', 
+    'jobName': 'Job-1'})
+# Save by lucas on 2020_07_06-22.15.27; build 6.14-1 2014_06_04-19.11.02 134264
+# Save by lucas on 2020_07_06-22.15.29; build 6.14-1 2014_06_04-19.11.02 134264
