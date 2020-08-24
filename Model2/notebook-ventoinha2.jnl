@@ -411,3 +411,572 @@ mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Jul 06 20:05:14 2020',
     'jobName': 'Job-1'})
 # Save by lucas on 2020_07_06-20.06.22; build 6.14-1 2014_06_04-19.11.02 134264
 # Save by lucas on 2020_07_06-20.08.13; build 6.14-1 2014_06_04-19.11.02 134264
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='Job-1', toName='Job-dispersao2')
+mdb.models['Model-2'].boundaryConditions['inflow'].setValues(v3=-0.05)
+mdb.models['Model-2'].steps['Step-1'].setValues(timePeriod=10.0)
+mdb.jobs['Job-dispersao2'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-dispersao2']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-DRQ6LK0', 'handle': 0, 'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(STARTED, {'phase': CFD_PHASE, 
+    'clientHost': 'DESKTOP-DRQ6LK0', 'handle': 0, 'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'No initial density has been prescribed. The default density from the material definition will be used', 
+    'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable TURBNU was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable TEMP was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(WARNING, {'phase': CFD_PHASE, 
+    'message': 'Variable U was not found, or is not available as a nodal output request.', 
+    'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0, 
+    'stepPercentage': 0.0, 'deltaTime': 0.01, 'jobName': 'Job-dispersao2', 
+    'step': 1, 'increment': 0, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52168e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.01025, 
+    'stepPercentage': 0.1025, 'deltaTime': 0.01025, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 1, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52116e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0207562, 
+    'stepPercentage': 0.207562, 'deltaTime': 0.0105062, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 2, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.5211e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0315252, 
+    'stepPercentage': 0.315252, 'deltaTime': 0.0107689, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 3, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.5211e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0425633, 
+    'stepPercentage': 0.425633, 'deltaTime': 0.0110381, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 4, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.5211e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0538774, 
+    'stepPercentage': 0.538774, 'deltaTime': 0.0113141, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 5, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52111e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0654743, 
+    'stepPercentage': 0.654743, 'deltaTime': 0.0115969, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 6, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52112e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0773612, 
+    'stepPercentage': 0.773612, 'deltaTime': 0.0118869, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 7, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52113e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.0895452, 
+    'stepPercentage': 0.895452, 'deltaTime': 0.012184, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 8, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52114e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.102034, 
+    'stepPercentage': 1.02034, 'deltaTime': 0.0124886, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 9, 'phase': CFD_PHASE, 
+    'kineticEnergy': 9.52116e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.114835, 
+    'stepPercentage': 1.14835, 'deltaTime': 0.0128008, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 10, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52118e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.127956, 
+    'stepPercentage': 1.27956, 'deltaTime': 0.0131209, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 11, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5212e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.141404, 
+    'stepPercentage': 1.41404, 'deltaTime': 0.0134489, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 12, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52123e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.15519, 
+    'stepPercentage': 1.5519, 'deltaTime': 0.0137851, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 13, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52126e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.169319, 
+    'stepPercentage': 1.69319, 'deltaTime': 0.0141297, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 14, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52129e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.183802, 
+    'stepPercentage': 1.83802, 'deltaTime': 0.014483, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 15, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52132e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.198647, 
+    'stepPercentage': 1.98647, 'deltaTime': 0.0148451, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 16, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52136e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.213863, 
+    'stepPercentage': 2.13863, 'deltaTime': 0.0152162, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 17, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52141e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.22946, 
+    'stepPercentage': 2.2946, 'deltaTime': 0.0155966, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 18, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52145e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.245447, 
+    'stepPercentage': 2.45447, 'deltaTime': 0.0159865, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 19, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52151e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.261833, 
+    'stepPercentage': 2.61833, 'deltaTime': 0.0163862, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 20, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52156e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.278629, 
+    'stepPercentage': 2.78629, 'deltaTime': 0.0167958, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 21, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52163e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.295844, 
+    'stepPercentage': 2.95844, 'deltaTime': 0.0172157, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 22, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52169e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.31349, 
+    'stepPercentage': 3.1349, 'deltaTime': 0.0176461, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 23, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52177e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.331578, 
+    'stepPercentage': 3.31578, 'deltaTime': 0.0180873, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 24, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52185e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.350117, 
+    'stepPercentage': 3.50117, 'deltaTime': 0.0185394, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 25, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52194e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.36912, 
+    'stepPercentage': 3.6912, 'deltaTime': 0.0190029, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 26, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52203e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.388598, 
+    'stepPercentage': 3.88598, 'deltaTime': 0.019478, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 27, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52213e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.408563, 
+    'stepPercentage': 4.08563, 'deltaTime': 0.019965, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 28, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52224e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.429027, 
+    'stepPercentage': 4.29027, 'deltaTime': 0.0204641, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 29, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52235e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.450003, 
+    'stepPercentage': 4.50003, 'deltaTime': 0.0209757, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 30, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52248e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.471503, 
+    'stepPercentage': 4.71503, 'deltaTime': 0.0215001, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 31, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52261e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.49354, 
+    'stepPercentage': 4.9354, 'deltaTime': 0.0220376, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 32, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52276e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.516129, 
+    'stepPercentage': 5.16129, 'deltaTime': 0.0225885, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 33, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52291e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.539282, 
+    'stepPercentage': 5.39282, 'deltaTime': 0.0231532, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 34, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52308e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.563014, 
+    'stepPercentage': 5.63014, 'deltaTime': 0.0237321, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 35, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52325e-08, 'rmsDiv': 1.17716e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.587339, 
+    'stepPercentage': 5.87339, 'deltaTime': 0.0243254, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 36, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52344e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.612273, 
+    'stepPercentage': 6.12273, 'deltaTime': 0.0249335, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 37, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52364e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.63783, 
+    'stepPercentage': 6.3783, 'deltaTime': 0.0255568, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 38, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52385e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.664026, 
+    'stepPercentage': 6.64026, 'deltaTime': 0.0261957, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 39, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52408e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.690876, 
+    'stepPercentage': 6.90876, 'deltaTime': 0.0268506, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 40, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52432e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.718398, 
+    'stepPercentage': 7.18398, 'deltaTime': 0.0275219, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 41, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52458e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.746608, 
+    'stepPercentage': 7.46608, 'deltaTime': 0.02821, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 42, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52485e-08, 'rmsDiv': 1.17717e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.775523, 
+    'stepPercentage': 7.75523, 'deltaTime': 0.0289152, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 43, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52514e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.805161, 
+    'stepPercentage': 8.05161, 'deltaTime': 0.0296381, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 44, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52545e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.83554, 
+    'stepPercentage': 8.3554, 'deltaTime': 0.030379, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 45, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52578e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.866679, 
+    'stepPercentage': 8.66679, 'deltaTime': 0.0311385, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 46, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52613e-08, 'rmsDiv': 1.17718e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.898596, 
+    'stepPercentage': 8.98596, 'deltaTime': 0.031917, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 47, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52649e-08, 'rmsDiv': 1.17719e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.931311, 
+    'stepPercentage': 9.31311, 'deltaTime': 0.0327149, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 48, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52688e-08, 'rmsDiv': 1.17719e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.964843, 
+    'stepPercentage': 9.64843, 'deltaTime': 0.0335328, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 49, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5273e-08, 'rmsDiv': 1.1772e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 0.999215, 
+    'stepPercentage': 9.99215, 'deltaTime': 0.0343711, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 50, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52773e-08, 'rmsDiv': 1.1772e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.03444, 
+    'stepPercentage': 10.3444, 'deltaTime': 0.0352304, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 51, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52819e-08, 'rmsDiv': 1.1772e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.07056, 
+    'stepPercentage': 10.7056, 'deltaTime': 0.0361111, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 52, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52868e-08, 'rmsDiv': 1.17721e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.10757, 
+    'stepPercentage': 11.0757, 'deltaTime': 0.0370139, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 53, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5292e-08, 'rmsDiv': 1.17721e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.14551, 
+    'stepPercentage': 11.4551, 'deltaTime': 0.0379392, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 54, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.52974e-08, 'rmsDiv': 1.17722e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.1844, 
+    'stepPercentage': 11.844, 'deltaTime': 0.0388877, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 55, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53032e-08, 'rmsDiv': 1.17723e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.22426, 
+    'stepPercentage': 12.2426, 'deltaTime': 0.0398599, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 56, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53093e-08, 'rmsDiv': 1.17723e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.26511, 
+    'stepPercentage': 12.6511, 'deltaTime': 0.0408564, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 57, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53157e-08, 'rmsDiv': 1.17724e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.30699, 
+    'stepPercentage': 13.0699, 'deltaTime': 0.0418778, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 58, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53225e-08, 'rmsDiv': 1.17725e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.34992, 
+    'stepPercentage': 13.4992, 'deltaTime': 0.0429248, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 59, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53296e-08, 'rmsDiv': 1.17726e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.39391, 
+    'stepPercentage': 13.9391, 'deltaTime': 0.0439979, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 60, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53371e-08, 'rmsDiv': 1.17727e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.43901, 
+    'stepPercentage': 14.3901, 'deltaTime': 0.0450978, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 61, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53451e-08, 'rmsDiv': 1.17728e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.48524, 
+    'stepPercentage': 14.8524, 'deltaTime': 0.0462253, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 62, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53534e-08, 'rmsDiv': 1.17729e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.53262, 
+    'stepPercentage': 15.3262, 'deltaTime': 0.0473809, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 63, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53622e-08, 'rmsDiv': 1.1773e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.58118, 
+    'stepPercentage': 15.8118, 'deltaTime': 0.0485654, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 64, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53715e-08, 'rmsDiv': 1.17731e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.63096, 
+    'stepPercentage': 16.3096, 'deltaTime': 0.0497796, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 65, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53812e-08, 'rmsDiv': 1.17732e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.68199, 
+    'stepPercentage': 16.8199, 'deltaTime': 0.0510241, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 66, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.53915e-08, 'rmsDiv': 1.17734e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.73429, 
+    'stepPercentage': 17.3429, 'deltaTime': 0.0522997, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 67, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54023e-08, 'rmsDiv': 1.17735e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.78789, 
+    'stepPercentage': 17.8789, 'deltaTime': 0.0536072, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 68, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54137e-08, 'rmsDiv': 1.17736e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.84284, 
+    'stepPercentage': 18.4284, 'deltaTime': 0.0549473, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 69, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54256e-08, 'rmsDiv': 1.17738e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.89916, 
+    'stepPercentage': 18.9916, 'deltaTime': 0.056321, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 70, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54381e-08, 'rmsDiv': 1.1774e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 1.95689, 
+    'stepPercentage': 19.5689, 'deltaTime': 0.0577291, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 71, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54513e-08, 'rmsDiv': 1.17742e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.01606, 
+    'stepPercentage': 20.1606, 'deltaTime': 0.0591723, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 72, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54652e-08, 'rmsDiv': 1.17744e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.07672, 
+    'stepPercentage': 20.7672, 'deltaTime': 0.0606516, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 73, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.54797e-08, 'rmsDiv': 1.17746e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.13888, 
+    'stepPercentage': 21.3888, 'deltaTime': 0.0621679, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 74, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5495e-08, 'rmsDiv': 1.17748e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.20261, 
+    'stepPercentage': 22.0261, 'deltaTime': 0.0637221, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 75, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5511e-08, 'rmsDiv': 1.1775e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.26792, 
+    'stepPercentage': 22.6792, 'deltaTime': 0.0653151, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 76, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.55278e-08, 'rmsDiv': 1.17753e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.33487, 
+    'stepPercentage': 23.3487, 'deltaTime': 0.066948, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 77, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.55454e-08, 'rmsDiv': 1.17755e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.40349, 
+    'stepPercentage': 24.0349, 'deltaTime': 0.0686217, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 78, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.55638e-08, 'rmsDiv': 1.17758e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.47383, 
+    'stepPercentage': 24.7383, 'deltaTime': 0.0703372, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 79, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.55832e-08, 'rmsDiv': 1.17761e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.54592, 
+    'stepPercentage': 25.4592, 'deltaTime': 0.0720957, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 80, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.56035e-08, 'rmsDiv': 1.17764e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.61982, 
+    'stepPercentage': 26.1982, 'deltaTime': 0.0738981, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 81, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.56247e-08, 'rmsDiv': 1.17767e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.69557, 
+    'stepPercentage': 26.9557, 'deltaTime': 0.0757455, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 82, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5647e-08, 'rmsDiv': 1.17771e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.77321, 
+    'stepPercentage': 27.7321, 'deltaTime': 0.0776392, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 83, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.56703e-08, 'rmsDiv': 1.17774e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.85279, 
+    'stepPercentage': 28.5279, 'deltaTime': 0.0795801, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 84, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.56946e-08, 'rmsDiv': 1.17778e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 2.93436, 
+    'stepPercentage': 29.3436, 'deltaTime': 0.0815696, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 85, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.57201e-08, 'rmsDiv': 1.17782e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.01796, 
+    'stepPercentage': 30.1796, 'deltaTime': 0.0836089, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 86, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.57468e-08, 'rmsDiv': 1.17787e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.10366, 
+    'stepPercentage': 31.0366, 'deltaTime': 0.0856991, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 87, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.57747e-08, 'rmsDiv': 1.17791e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.1915, 
+    'stepPercentage': 31.915, 'deltaTime': 0.0878416, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 88, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.58038e-08, 'rmsDiv': 1.17796e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.28154, 
+    'stepPercentage': 32.8154, 'deltaTime': 0.0900376, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 89, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.58343e-08, 'rmsDiv': 1.17801e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.37383, 
+    'stepPercentage': 33.7383, 'deltaTime': 0.0922886, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 90, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.58661e-08, 'rmsDiv': 1.17806e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.46843, 
+    'stepPercentage': 34.6843, 'deltaTime': 0.0945958, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 91, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.58994e-08, 'rmsDiv': 1.17812e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.56539, 
+    'stepPercentage': 35.6539, 'deltaTime': 0.0969607, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 92, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.5934e-08, 'rmsDiv': 1.17818e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.66477, 
+    'stepPercentage': 36.6477, 'deltaTime': 0.0993847, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 93, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.59702e-08, 'rmsDiv': 1.17824e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.76664, 
+    'stepPercentage': 37.6664, 'deltaTime': 0.101869, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 94, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.6008e-08, 'rmsDiv': 1.17831e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.87106, 
+    'stepPercentage': 38.7106, 'deltaTime': 0.104416, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 95, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.60474e-08, 'rmsDiv': 1.17838e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 3.97808, 
+    'stepPercentage': 39.7808, 'deltaTime': 0.107026, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 96, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.60885e-08, 'rmsDiv': 1.17846e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.08779, 
+    'stepPercentage': 40.8779, 'deltaTime': 0.109702, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 97, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.61313e-08, 'rmsDiv': 1.17853e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.20023, 
+    'stepPercentage': 42.0023, 'deltaTime': 0.112445, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 98, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.61759e-08, 'rmsDiv': 1.17861e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.31549, 
+    'stepPercentage': 43.1549, 'deltaTime': 0.115256, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 99, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.62223e-08, 'rmsDiv': 1.1787e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.43362, 
+    'stepPercentage': 44.3362, 'deltaTime': 0.118137, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 100, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.62707e-08, 'rmsDiv': 1.17879e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.55471, 
+    'stepPercentage': 45.5471, 'deltaTime': 0.121091, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 101, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.63211e-08, 'rmsDiv': 1.17889e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.67883, 
+    'stepPercentage': 46.7883, 'deltaTime': 0.124118, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 102, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.63735e-08, 'rmsDiv': 1.17899e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.80605, 
+    'stepPercentage': 48.0605, 'deltaTime': 0.127221, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 103, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.6428e-08, 'rmsDiv': 1.17909e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 4.93645, 
+    'stepPercentage': 49.3645, 'deltaTime': 0.130401, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 104, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.64847e-08, 'rmsDiv': 1.1792e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.07012, 
+    'stepPercentage': 50.7012, 'deltaTime': 0.133661, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 105, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.65437e-08, 'rmsDiv': 1.17932e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.20712, 
+    'stepPercentage': 52.0712, 'deltaTime': 0.137003, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 106, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.66049e-08, 'rmsDiv': 1.17944e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.34755, 
+    'stepPercentage': 53.4755, 'deltaTime': 0.140428, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 107, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.66686e-08, 'rmsDiv': 1.17956e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.49149, 
+    'stepPercentage': 54.9149, 'deltaTime': 0.143939, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 108, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.67347e-08, 'rmsDiv': 1.1797e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.63902, 
+    'stepPercentage': 56.3902, 'deltaTime': 0.147537, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 109, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.68034e-08, 'rmsDiv': 1.17984e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.79025, 
+    'stepPercentage': 57.9025, 'deltaTime': 0.151226, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 110, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.68746e-08, 'rmsDiv': 1.17998e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 5.94525, 
+    'stepPercentage': 59.4525, 'deltaTime': 0.155006, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 111, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.69486e-08, 'rmsDiv': 1.18013e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.10414, 
+    'stepPercentage': 61.0414, 'deltaTime': 0.158881, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 112, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.70253e-08, 'rmsDiv': 1.18029e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.26699, 
+    'stepPercentage': 62.6699, 'deltaTime': 0.162853, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 113, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.71048e-08, 'rmsDiv': 1.18046e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.43391, 
+    'stepPercentage': 64.3391, 'deltaTime': 0.166925, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 114, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.71872e-08, 'rmsDiv': 1.18063e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.60501, 
+    'stepPercentage': 66.0501, 'deltaTime': 0.171098, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 115, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.72726e-08, 'rmsDiv': 1.18081e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.78039, 
+    'stepPercentage': 67.8039, 'deltaTime': 0.175375, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 116, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.73611e-08, 'rmsDiv': 1.181e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 6.96015, 
+    'stepPercentage': 69.6015, 'deltaTime': 0.17976, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 117, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.74527e-08, 'rmsDiv': 1.1812e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 7.1444, 
+    'stepPercentage': 71.444, 'deltaTime': 0.184254, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 118, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.75475e-08, 'rmsDiv': 1.1814e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 7.33326, 
+    'stepPercentage': 73.3326, 'deltaTime': 0.18886, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 119, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.76456e-08, 'rmsDiv': 1.18162e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 7.52684, 
+    'stepPercentage': 75.2684, 'deltaTime': 0.193581, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 120, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.77471e-08, 'rmsDiv': 1.18184e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 7.72526, 
+    'stepPercentage': 77.2526, 'deltaTime': 0.198421, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 121, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.7852e-08, 'rmsDiv': 1.18207e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 7.92864, 
+    'stepPercentage': 79.2864, 'deltaTime': 0.203382, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 122, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.79604e-08, 'rmsDiv': 1.18231e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 8.13711, 
+    'stepPercentage': 81.3711, 'deltaTime': 0.208466, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 123, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.80724e-08, 'rmsDiv': 1.18256e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 8.35079, 
+    'stepPercentage': 83.5079, 'deltaTime': 0.213678, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 124, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.81881e-08, 'rmsDiv': 1.18282e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 8.56981, 
+    'stepPercentage': 85.6981, 'deltaTime': 0.21902, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 125, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.83075e-08, 'rmsDiv': 1.1831e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 8.7943, 
+    'stepPercentage': 87.943, 'deltaTime': 0.224495, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 126, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.84307e-08, 'rmsDiv': 1.18338e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 9.02441, 
+    'stepPercentage': 90.2441, 'deltaTime': 0.230108, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 127, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.85579e-08, 'rmsDiv': 1.18367e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 9.26027, 
+    'stepPercentage': 92.6027, 'deltaTime': 0.23586, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 128, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.8689e-08, 'rmsDiv': 1.18398e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 9.50203, 
+    'stepPercentage': 95.0203, 'deltaTime': 0.241757, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 129, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.88241e-08, 'rmsDiv': 1.1843e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 9.74983, 
+    'stepPercentage': 97.4983, 'deltaTime': 0.247801, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 130, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.89634e-08, 'rmsDiv': 1.18463e-05})
+mdb.jobs['Job-dispersao2']._Message(STATUS, {'totalTime': 10.0038, 
+    'stepPercentage': 100.0, 'deltaTime': 0.253996, 
+    'jobName': 'Job-dispersao2', 'step': 1, 'increment': 131, 
+    'phase': CFD_PHASE, 'kineticEnergy': 9.91068e-08, 'rmsDiv': 1.18497e-05})
+mdb.jobs['Job-dispersao2']._Message(COMPLETED, {'phase': CFD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-dispersao2'})
+mdb.jobs['Job-dispersao2']._Message(JOB_COMPLETED, {
+    'time': 'Thu Jul 16 19:02:09 2020', 'jobName': 'Job-dispersao2'})
+mdb.jobs.changeKey(fromName='Job-dispersao2', toName='Job-2')
+# Save by Gabriel on 2020_07_16-19.10.59; build 6.14-1 2014_06_04-19.11.02 134264
